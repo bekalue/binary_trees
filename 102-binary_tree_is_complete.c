@@ -37,10 +37,11 @@ int helper(const binary_tree_t *tree, size_t index, size_t size)
 		return (1);
 	if (index >= size)
 		return (0);
-	return (helper(tree->left, (2 * index) + 1, size) && helper(tree->right, (2 * index) + 2, size));
+	return (helper(tree->left, (2 * index) + 1, size) &&
+			helper(tree->right, (2 * index) + 2, size));
 }
 
-/*
+/**
  * binary_tree_is_complete - checks if a binary tree is complete.
  * @tree: a pointer to the root node of the tree to check
  *
