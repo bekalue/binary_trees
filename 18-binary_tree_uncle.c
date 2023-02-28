@@ -11,7 +11,7 @@ binary_tree_t *binary_tree_uncle(binary_tree_t *node)
 {
 	binary_tree_t *left = NULL;
 	binary_tree_t *right = NULL;
-	binary_tree_t *parent = node->parent;
+	binary_tree_t *parent = node ? node->parent : NULL;
 
 	if (parent && parent->parent)
 	{
