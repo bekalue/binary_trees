@@ -1,5 +1,17 @@
 #include "binary_trees.h"
 
+/**
+ * bst_insert -  inserts a value in a Binary Search Tree
+ *		 if the address stored in tree is NULL,
+ *		 the created node becomes the root node.
+ *		 If the value is already present in the tree,
+ *		 it will be ignored.
+ *
+ * @tree: a double pointer to the root node of the BST to insert the value.
+ * @value: the value to store in the node to be inserted.
+ *
+ * Return: returns a pointer to the created node, or NULL on failure
+ */
 bst_t *bst_insert(bst_t **tree, int value)
 {
 	bst_t *parent, *tmp, *new_node;
