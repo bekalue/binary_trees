@@ -13,10 +13,10 @@ int helper(const binary_tree_t *tree, int min, int max)
 {
 	if (!tree)
 		return (1);
-	if (tree->n <= min || tree->n >= max)
+	if (tree->n < min || tree->n > max)
 		return (0);
-	return (helper(tree->left, min, tree->n) &&
-			helper(tree->right, tree->n, max));
+	return (helper(tree->left, min, tree->n - 1) &&
+			helper(tree->right, tree->n + 1, max));
 }
 
 /**
