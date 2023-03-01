@@ -81,10 +81,12 @@ bst_t *replace_with_successor(bst_t **node)
 
 /**
  * bst_remove - Removes a node with a given value in a binary search tree.
- * @root: The binary search tree.
- * @value: The value of the node.
+ *		If the node to be deleted has two children, it will be replaced
+ *		with its first in-order successor (not predecessor)
+ * @root: a pointer to the root node of the tree where you will remove a node.
+ * @value: the value to remove in the tree.
  *
- * Return: A pointer to the tree's root node, otherwise NULL.
+ * Return: a pointer to the new root node of the tree after removing the desired value.
  */
 bst_t *bst_remove(bst_t *root, int value)
 {
