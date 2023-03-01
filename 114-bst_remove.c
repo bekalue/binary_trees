@@ -30,7 +30,7 @@ bst_t *bst_remove(bst_t *root, int value)
 {
 	bst_t *replace;
 
-	if (!root || !value)
+	if (!root)
 		return (NULL);
 
 	if (value < root->n)
