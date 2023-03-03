@@ -20,7 +20,7 @@ size_t binary_tree_size(const binary_tree_t *tree)
 }
 
 /**
- * helper - searches all binary tree nodes and determines
+ * helper_complete - searches all binary tree nodes and determines
  *	    if the tree is complete by returning specific values.
  * @tree: a pointer to the root node of the tree to check.
  * @index: node index to check.
@@ -36,8 +36,8 @@ int helper_complete(const binary_tree_t *tree, size_t index, size_t size)
 		return (1);
 	if (index >= size)
 		return (0);
-	return (helper(tree->left, (2 * index) + 1, size) &&
-			helper(tree->right, (2 * index) + 2, size));
+	return (helper_complete(tree->left, (2 * index) + 1, size) &&
+			helper_complete(tree->right, (2 * index) + 2, size));
 }
 
 /**
@@ -54,12 +54,12 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 		size_t size;
 
 		size = binary_tree_size(tree);
-		return (helper(tree, 0, size));
+		return (helper_complete(tree, 0, size));
 	}
 	return (0);
 }
 /**
- * helper - helps in checking if a binary tree is a valid max binary heap.
+ * helper_heap - helps in checking if a binary tree is a valid max binary heap.
  * @tree: a pointer to the root node of tree to check.
  *
  * Return: 1 if its a valid or 0 otherwise
