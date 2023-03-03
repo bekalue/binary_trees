@@ -13,7 +13,7 @@ heap_t *array_to_heap(int *array, size_t size)
 	size_t i = 0;
 	heap_t *root;
 
-	while (i < size)
+	while (array && i < size)
 	{
 		heap_insert(&root, *(array + i));
 		i++;
