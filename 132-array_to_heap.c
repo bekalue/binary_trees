@@ -10,13 +10,15 @@
  */
 heap_t *array_to_heap(int *array, size_t size)
 {
-	size_t i = 0;
-	heap_t *root;
+	size_t i;
+	heap_t *root = NULL;
 
-	while (array && i < size)
+	if (array != NULL)
 	{
-		heap_insert(&root, *(array + i));
-		i++;
+		for (i = 0; i < size; i++)
+		{
+			heap_insert(&root, *(array + i));
+		}
 	}
 	return (root);
 }
